@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    </head>
+
+    <body>
+        <div id="chartContainer">
+            <h2>AM</h2>
+            <canvas id="myChart"></canvas>
+        </div>
+        <div id="chartContainer">
+            <h2>PM</h2>
+            <canvas id="myChart2"></canvas>
+        </div>
+    </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="./chartjs-plugin-piechart-outlabels.js"></script> -->
+
+    <script>
+        const ctx = document.getElementById('myChart');
+        const ctx2 = document.getElementById('myChart2');
+
+        Chart.defaults.color = "#FFFFFF";
+        Chart.defaults.font.size = 16;
+
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ["00~03 畫圖", "03~05 不知道", "05~12 睡覺"],
+                datasets: [{
+                    label: "這個時段佔12小時中的幾個小時",
+                    data: [3, 2, 7],
+                    borderWidth: 2,
+                    backgroundColor: ["#2E2CB9", "#9DBAD4", "#A2A2A2"]
+                }],
+            }
+        });
+
+        new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: ["12~14 起床找午餐", "14~16 六角學院", "16~18 找晚餐", "18~22 畫圖+打GAME", "22~00 六角學院"],
+                datasets: [{
+                    label: "這個時段佔12小時中的幾個小時",
+                    data: [2, 2, 2, 4, 2],
+                    borderWidth: 2,
+                    backgroundColor: ["#EEDFAB", "#9BE6C4", "#F3C090", "#93B3EE", "#9BE6C4"]
+                }]
+            }
+        });
+    </script>
+
+</html>

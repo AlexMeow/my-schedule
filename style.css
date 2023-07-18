@@ -1,0 +1,39 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #535455;
+    color: #E1E1E1;
+}
+
+canvas {
+    margin: 50px;
+    opacity: 0.9;
+}
+
+#chartContainer {
+    text-align: center;
+    width: 40%; 
+    height: 40%;
+}
+
+/* 
+   Responsive web design for mobile device, 
+   triggered when device's width is less than 600px.
+*/
+@media (max-width: 600px) {
+    body {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    #chartContainer {
+        text-align: center;
+        width: 100%; 
+        height: 100%;
+    }
+
+}
